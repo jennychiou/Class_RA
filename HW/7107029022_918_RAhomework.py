@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix
 # In[2]:
 
 
-# 讀取數據，以Date當作首欄
+# 讀取數據
 data = pd.read_csv('data/500_Person_Gender_Height_Weight_Index.csv')
 
 
@@ -85,6 +85,7 @@ print(data)
 
 data['Weight'] = data['Weight'].apply(lambda x:0.453592*x)
 data.plot.scatter(x='Weight', y='Height')
+plt.show()
 
 
 # In[11]:
@@ -107,6 +108,7 @@ plt.show()
 
 # 看出分類(0-Extremely Weak,1-Weak,2-Normal,3-Overweight,4-Obesity,5-Extreme Obesity)
 sns.FacetGrid(data, hue="Type", size=5).map(plt.scatter, "Height", "Weight").add_legend()
+plt.show()
 
 
 # In[13]:
@@ -190,6 +192,7 @@ colormap = plt.cm.viridis
 plt.figure(figsize=(7,7))
 plt.title('BMI of Features', y=1.05, size=16)
 sns.heatmap(data.astype(float).corr(),linewidths=0.1,vmax=1.0, square=True, cmap=colormap, linecolor='white', annot=True)
+plt.show()
 
 
 # In[18]:
@@ -197,6 +200,7 @@ sns.heatmap(data.astype(float).corr(),linewidths=0.1,vmax=1.0, square=True, cmap
 
 # 分析特徵的兩兩相關
 sns.pairplot(data)
+plt.show()
 
 
 # In[19]:
