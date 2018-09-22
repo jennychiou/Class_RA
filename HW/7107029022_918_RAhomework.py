@@ -107,6 +107,7 @@ plt.show()
 
 
 # 看出分類(0-Extremely Weak,1-Weak,2-Normal,3-Overweight,4-Obesity,5-Extreme Obesity)
+sns.FacetGrid(data, hue="Gender", size=5).map(plt.scatter, "Height", "Weight").add_legend()
 sns.FacetGrid(data, hue="Type", size=5).map(plt.scatter, "Height", "Weight").add_legend()
 plt.show()
 
