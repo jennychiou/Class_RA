@@ -107,7 +107,7 @@ def get_consumption_category(wt):
         return ">1200kWh"
   
 data["electricity_consumption_category"] = data["electricity_consumption"].map(get_consumption_category)
-data
+print(data)
 
 
 # In[10]:
@@ -143,7 +143,7 @@ y1 = data['electricity_consumption'].values
 slr = LinearRegression()
 slr.fit(X1, y1)
 print("Temperature VS Electricity Consumption")
-print('Slope斜率: %.3f' % slr.coef_[0])
+print('Coefficients迴歸係數: %.3f' % slr.coef_[0])
 print('Intercept截距: %.3f' % slr.intercept_)
 print('\n')
 X2 = data[['pressure']].values
@@ -151,7 +151,7 @@ y2 = data['electricity_consumption'].values
 slr = LinearRegression()
 slr.fit(X2, y2)
 print("Pressure VS Electricity Consumption")
-print('Slope斜率: %.3f' % slr.coef_[0])
+print('Coefficients迴歸係數: %.3f' % slr.coef_[0])
 print('Intercept截距: %.3f' % slr.intercept_)
 print('\n')
 X3 = data[['windspeed']].values
@@ -235,7 +235,7 @@ Counts = [a,b,c,d,e,f,g]
 df = pd.DataFrame()
 df["Electricity Consumption"] = ElectricityConsumption
 df["Counts"] = Counts
-df
+print(df)
 
 
 # In[15]:
