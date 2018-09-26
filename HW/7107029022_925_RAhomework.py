@@ -269,3 +269,4 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 
 print('MSE train: %.3f, test: %.3f' % (mean_squared_error(y_train, y_train_pred),mean_squared_error(y_test, y_test_pred)))
+
