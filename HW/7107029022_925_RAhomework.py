@@ -233,40 +233,20 @@ plt.show()
 # In[14]:
 
 
-from sklearn.cross_validation import train_test_split
-data = data[['temperature','pressure', 'windspeed','electricity_consumption']]
-X = data.iloc[:, :].values
-y = data['temperature'].values
-print(X)
-print(y)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
-
-slr = LinearRegression()
-slr.fit(X_train, y_train)
-
-y_train_pred = slr.predict(X_train)
-y_test_pred = slr.predict(X_test)
-
-plt.scatter(y_train_pred, y_train_pred-y_train, c='blue', marker='o',label='Training data')
-plt.scatter(y_test_pred, y_test_pred-y_test, c='lightgreen', marker='s',label='Test data')
-
-plt.xlabel('Predicted values')
-plt.ylabel('Residuals')
-plt.legend(loc='upper left')
-
-plt.hlines(y=0, xmin=-10, xmax=50, lw=2, color='red')
-
-plt.xlim([-10, 50])
-plt.tight_layout()
-plt.show()
-
-
-# In[15]:
-
-
 #MSE
-from sklearn.metrics import r2_score
-from sklearn.metrics import mean_squared_error
+temperatures = data[['temperature']].values
+electricity_consumption = data['electricity_consumption'].values
 
-print('MSE train: %.3f, test: %.3f' % (mean_squared_error(y_train, y_train_pred),mean_squared_error(y_test, y_test_pred)))
+# 轉換維度
+temperatures = np.reshape(temperatures, (len(temperatures), 1))
+electricity_consumption = np.reshape(electricity_consumption, (len(electricity_consumption), 1))
+
+lm = LinearRegression()
+lm.fit(temperatures, electricity_consumption)
+
+# 模型績效
+mse = np.mean((lm.predict(temperatures) - electricity_consumption) ** 2)
+
+# 印出模型績效
+print("MSE : %.3f" % (mse))
 
