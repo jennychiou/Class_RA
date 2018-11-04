@@ -67,13 +67,13 @@ y_pred = classifier.predict(X_test)
 
 
 # 計算特徵值
-cov_mat = np.cov(X_train_std.T)
+cov_mat = np.cov(X_train.T)
 eigen_vals, eigen_vecs = np.linalg.eig(cov_mat)
 
 print('\nEigenvalues : \n%s' % eigen_vals)
 
 
-# In[ ]:
+# In[9]:
 
 
 from matplotlib.colors import ListedColormap
@@ -83,13 +83,13 @@ aranged_pc1 = np.arange(start = X_set[:, 0].min(), stop = X_set[:, 0].max(), ste
 aranged_pc2 = np.arange(start = X_set[:, 1].min(), stop = X_set[:, 1].max(), step = 0.01)
 
 
-# In[ ]:
+# In[10]:
 
 
 # 視覺化
 X1, X2 = np.meshgrid(aranged_pc1, aranged_pc2)
 plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
-alpha = 0.5, cmap = ListedColormap(('orange', 'blue', 'green')))
+alpha = 0.5, cmap = ListedColormap(('red', 'green', 'blue')))
 
 plt.xlim(X1.min(), X1.max())
 plt.ylim(X2.min(), X2.max())
@@ -105,14 +105,14 @@ plt.show()
 
 # # PCA
 
-# In[9]:
+# In[11]:
 
 
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
-# In[10]:
+# In[12]:
 
 
 from sklearn.preprocessing import StandardScaler
@@ -121,7 +121,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 
-# In[11]:
+# In[13]:
 
 
 from sklearn.decomposition import PCA
@@ -131,7 +131,7 @@ X_test = pca.transform(X_test)
 explained_variance = pca.explained_variance_ratio_
 
 
-# In[12]:
+# In[14]:
 
 
 # 套用邏輯式回歸
@@ -140,14 +140,14 @@ classifier = LogisticRegression(random_state = 0)
 classifier.fit(X_train, y_train)
 
 
-# In[13]:
+# In[15]:
 
 
 # 對測試資料即做預測
 y_pred = classifier.predict(X_test)
 
 
-# In[14]:
+# In[16]:
 
 
 # 建立混淆矩陣
@@ -155,7 +155,7 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
-# In[15]:
+# In[17]:
 
 
 # 視覺化訓練資料集
@@ -177,7 +177,7 @@ plt.legend()
 plt.show()
 
 
-# In[16]:
+# In[18]:
 
 
 # 視覺化測試資料集
