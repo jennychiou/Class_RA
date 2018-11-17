@@ -9,3 +9,4 @@
 7. 1023homework (＃一、1. 描述性分析2. 散佈圖(兩個特徵一組)3. 相關矩陣4. 共變異數矩陣5. eigenvalue分解6. 找出主成份矩陣7. 選出主成份(比較不同數目主成份的MSE)8. 說明eigenvalue與MSE的關係   ＃二、 直接用scikit learn的PCA和迴歸分析)
 8. 1030himework (對資料進行LDA分析，比較有無LDA之差別)
 9. 1113期中報告 (1.論文題目 2.決定題目的過程 3.文獻探討)
+10.1113homework (使用 Naive Bayes 進行資料分析)
