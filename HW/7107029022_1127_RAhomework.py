@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# <img src="img/1127-1.jpg" width="30%">
+# ![title](img/1127-1.jpg)
 
 # In[1]:
 
@@ -15,11 +15,11 @@ array = [[0.6,0.25,0.05],[0.2,0.25,0.1],[0.15,0.25,0.35],[0.05,0.25,0.5]]
 
 # # weather matrix
 
-# <img src="img/1127-2.jpg" width="70%">
+# ![title](img/1127-2.jpg)
 
 # # transition matrix
 
-# <img src="img/1127-3.jpg" width="70%">
+# ![title](img/1127-3.jpg)
 
 # In[2]:
 
