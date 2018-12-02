@@ -1,9 +1,14 @@
 
 # coding: utf-8
 
-# ![title](img/1127-1.jpg)
-
 # In[1]:
+
+
+from IPython.display import Image, display
+display(Image(filename='img/1127-1.jpg', embed=True))
+
+
+# In[2]:
 
 
 states = ["Sunny","Cloudy","Rainy"]
@@ -15,13 +20,23 @@ array = [[0.6,0.25,0.05],[0.2,0.25,0.1],[0.15,0.25,0.35],[0.05,0.25,0.5]]
 
 # # weather matrix
 
-# ![title](img/1127-2.jpg)
+# In[3]:
+
+
+from IPython.display import Image, display
+display(Image(filename='img/1127-2.jpg', embed=True))
+
 
 # # transition matrix
 
-# ![title](img/1127-3.jpg)
+# In[4]:
 
-# In[2]:
+
+from IPython.display import Image, display
+display(Image(filename='img/1127-3.jpg', embed=True))
+
+
+# In[5]:
 
 
 #a1
@@ -38,13 +53,13 @@ print("a1c :",a1c)
 print("a1r :",a1r)
 
 
-# In[3]:
+# In[6]:
 
 
 a1
 
 
-# In[4]:
+# In[7]:
 
 
 #a2
@@ -61,13 +76,13 @@ print("a2c :",a2c)
 print("a2r :",a2r)
 
 
-# In[5]:
+# In[8]:
 
 
 a2
 
 
-# In[6]:
+# In[9]:
 
 
 #a3
@@ -84,7 +99,7 @@ print("a3c :",a3c)
 print("a3r :",a3r)
 
 
-# In[7]:
+# In[10]:
 
 
 a3
